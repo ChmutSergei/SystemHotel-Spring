@@ -8,8 +8,12 @@ This application is the search and reservation of rooms in the hotel "Paradise" 
  
 The application is available in test mode on http://hotel.mycloud.by/
  
-## Usage
+ # Start easily with Docker in 2 steps:
+  1. Install **[Docker](https://www.docker.com/products/docker-desktop)** 
+  2. Deploy Application. See more [Deployment with Docker](https://github.com/ChmutSergei/SystemHotel-Spring#Deployment-with-Docker) 
+ 
 
+## Usage
 
 The application is coded in Java, using Maven to manage the project.
 
@@ -47,7 +51,44 @@ For ADMIN role use USERNAME "admin" PASSWORD "admin"
 For USER role use USERNAME "user1" PASSWORD "1" (or user2,..user6 and password "1")
 
 and of course there is an opportunity to register a new user.
+ 
+ ### Deployment with Docker
+ #### 1. Install **[Docker](https://www.docker.com/products/docker-desktop)** 
+   Docker Desktop is a tool for MacOS and Windows machines for the building and sharing of containerized applications and microservices. 
+ 
+   Or install docker for **[Linux](https://docs.docker.com/engine/install/ubuntu/)**, for example, Ubuntu:
+     
+```
+  $ sudo apt-get update
+  $ sudo apt-get install docker  
+``` 
 
+
+ #### 2. Use **docker-compose.yml** from the **docker** folder and deploy the application in a few minutes (first time) or in a few seconds (when you get docker's images).
+     
+   It is very simple, just copies **docker-compose.yml** in your Virtual Machine or PC. (You may create this file with several text lines)
+     
+   Run deployment with command:
+ ```
+ docker-compose up -d
+ ```
+   After docker's output: 
+   ```
+  Creating network "hoteldockerimage_default" with the default driver
+  Creating hoteldockerimage_db_1 ... done
+  Creating hoteldockerimage_web_1 ... done
+```
+    
+  Check SystemHotel application at [http://localhost/hotel]  or  [http://YourVirtualMachineIp/hotel]
+
+If you want to see List of docker containers use `docker-compose ps`.
+
+For logs `docker-compose logs -f`
+
+**Clean**
+When you want to stop and delete Application use `docker-compose down` - Docker stop and remove containers, networks, images, and volumes
+
+ 
  ### Installing
  
  The project can be installed by creating the war file and deploying it into a server.
@@ -68,3 +109,4 @@ and of course there is an opportunity to register a new user.
 ![scr3](https://user-images.githubusercontent.com/42671888/46771550-bf69b180-ccfc-11e8-9e5d-8ea94fabb40f.JPG)
 ![scr4](https://user-images.githubusercontent.com/42671888/46771558-cb557380-ccfc-11e8-84ca-9722049dd828.JPG)
 ![scr5](https://user-images.githubusercontent.com/42671888/46771566-d6a89f00-ccfc-11e8-9d7e-0fb395df52af.JPG)
+

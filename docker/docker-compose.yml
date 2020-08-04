@@ -1,0 +1,17 @@
+version: "2.4"
+services:
+  web:
+    image: chmut/hotelsystem:webapp
+    ports:
+      - 80:8080
+    depends_on:
+      db:
+        condition: service_healthy
+  db:
+    image: chmut/hotelsystem:mysqldb
+    environment:
+      - MYSQL_ROOT_PASSWORD=1234
+    ports:
+      - 3306:3306
+    healthcheck:
+      test: mysql --protocol=socket -hlocalhost -uroot -p$$MYSQL_ROOT_PASSWORD -e 'SELECT 1'    
