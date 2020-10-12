@@ -21,7 +21,7 @@
         <hibernate.version>5.2.11.Final</hibernate.version>
         <jdbc.version>8.0.12</jdbc.version>
         <compiler.version>3.7.0</compiler.version>
-        <junit.version>4.12</junit.version>
+        <junit.version>4.13.1</junit.version>
         <tiles.version>3.0.5</tiles.version>
         <aspectj.version>1.8.4</aspectj.version>
         <jstl.version>1.2</jstl.version>
